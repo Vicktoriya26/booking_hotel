@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Booking</h1>
+<div class="card" style="width: 18rem;">
+    <img src="{{ room.image_url }}" class="card-img-top" alt="">
+    <div class="card-body">
+        <h5 class="card-title"><span class="text text-warning">{{ room.number }}</span></h5>
+        <p class="card-text">{{ room.description }}</p>
+    </div>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_div }}
+        <button type="submit" class="btn btn-primary">Забронювати</button>
+    </form>
+</div>
+{% endblock %}
